@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>Monart Frédéric – Profil professionnel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 680px;
+      max-width: 700px;
       margin: auto;
       padding: 24px;
       line-height: 1.6;
@@ -24,32 +25,120 @@
     .section {
       margin-top: 28px;
     }
+    .lang {
+      margin-top: 18px;
+    }
+    .lang button {
+      margin-right: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+    .vcard {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 14px;
+      background-color: #000000;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
+
 <body>
 
 <h1>MONART Frédéric</h1>
 <div class="subtitle">1er Inspecteur – OPJ / APR</div>
 
-<div class="section">
-  <strong>Police belgium</strong><br>
+<div class="lang">
+  <strong>Langue :</strong>
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('nl')">NL</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<a class="vcard" href="frederic-monart.vcf" download>
+➕ Ajouter au carnet
+</a>
+
+<!-- ================= FR ================= -->
+<div id="fr" class="section">
+  <strong>Police belge</strong><br>
   Section ECOFIN<br>
   OSINT • Analyses Data • Power BI
+
+  <div class="section">
+    <strong>Téléphone :</strong> 02 559 87 82 74<br>
+    <strong>Email :</strong> frederic.monart@police.belgium.eu
+  </div>
+
+  <div class="section">
+    <strong>Profil professionnel</strong>
+    <p>
+      Enquêteur spécialisé en criminalité économique et financière au sein de la ZP MIDI 5341,
+      avec une expertise en investigations OSINT, FININT, GEOINT, SOCMINT et en analyses de données (Power BI).
+      Intervention dans des dossiers sensibles à forte composante financière et numérique,
+      impliquant des flux financiers, des structures sociétaires et des environnements numériques.
+    </p>
+  </div>
 </div>
 
-<div class="section">
-  <strong>Téléphone :</strong> 02 559 87 82 74<br>
-  <strong>Email :</strong> frederic.monart@police.belgium.eu
+<!-- ================= NL ================= -->
+<div id="nl" class="section hidden">
+  <strong>Belgische politie</strong><br>
+  ECOFIN-dienst<br>
+  OSINT • Data-analyse • Power BI
+
+  <div class="section">
+    <strong>Telefoon :</strong> 02 559 87 82 74<br>
+    <strong>E-mail :</strong> frederic.monart@police.belgium.eu
+  </div>
+
+  <div class="section">
+    <strong>Professioneel profiel</strong>
+    <p>
+      Onderzoeker gespecialiseerd in economische en financiële criminaliteit binnen ZP MIDI 5341,
+      met expertise in OSINT-onderzoeken, FININT, GEOINT, SOCMINT en geavanceerde data-analyse (Power BI).
+      Actief in gevoelige dossiers met financiële stromen,
+      vennootschapsstructuren en digitale omgevingen.
+    </p>
+  </div>
 </div>
 
-<div class="section">
-  <strong>Profil professionnel</strong>
-  <p>
-    Enquêteur spécialisé en criminalité économique et financière au sein de la ZP MIDI 5341,
-    investigations OSINT, FINMIN , GEOINT , SOCMINT et Analyses Datas.
-    Intervention dans des dossiers sensibles à forte composante financière et numérique impliquant des flux financiers, des structures sociétaires et des environnements numériques.
-  </p>
+<!-- ================= EN ================= -->
+<div id="en" class="section hidden">
+  <strong>Belgian Police</strong><br>
+  ECOFIN Unit<br>
+  OSINT • Data Analysis • Power BI
+
+  <div class="section">
+    <strong>Phone:</strong> +32 2 559 87 82 74<br>
+    <strong>Email:</strong> frederic.monart@police.belgium.eu
+  </div>
+
+  <div class="section">
+    <strong>Professional profile</strong>
+    <p>
+      Investigator specialized in economic and financial crime within ZP MIDI 5341,
+      with expertise in OSINT investigations, FININT, GEOINT, SOCMINT
+      and advanced data analysis (Power BI).
+      Involved in sensitive cases including financial flows,
+      corporate structures and digital environments.
+    </p>
+  </div>
 </div>
+
+<script>
+function setLang(lang) {
+  document.getElementById('fr').classList.add('hidden');
+  document.getElementById('nl').classList.add('hidden');
+  document.getElementById('en').classList.add('hidden');
+  document.getElementById(lang).classList.remove('hidden');
+}
+</script>
 
 </body>
 </html>
