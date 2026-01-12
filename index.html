@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Monart Frédéric – Profil professionnel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
 
   <style>
     body {
@@ -15,19 +16,10 @@
       background-color: #ffffff;
       color: #000000;
     }
-    h1 {
-      margin-bottom: 0;
-    }
-    .subtitle {
-      font-weight: bold;
-      margin-top: 4px;
-    }
-    .section {
-      margin-top: 28px;
-    }
-    .lang {
-      margin-top: 18px;
-    }
+    h1 { margin-bottom: 0; }
+    .subtitle { font-weight: bold; margin-top: 4px; }
+    .section { margin-top: 28px; }
+    .lang { margin-top: 18px; }
     .lang button {
       margin-right: 6px;
       padding: 6px 10px;
@@ -42,9 +34,7 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
   </style>
 </head>
 
@@ -55,16 +45,15 @@
 
 <div class="lang">
   <strong>Langue :</strong>
-  <button onclick="setLang('fr')">FR</button>
-  <button onclick="setLang('nl')">NL</button>
-  <button onclick="setLang('en')">EN</button>
+  <button onclick="L('fr')">FR</button>
+  <button onclick="L('nl')">NL</button>
+  <button onclick="L('en')">EN</button>
 </div>
 
 <a class="vcard" href="frederic-monart.vcf" download>
 ➕ Ajouter au carnet
 </a>
 
-<!-- ================= FR ================= -->
 <div id="fr" class="section">
   <strong>Police belge</strong><br>
   Section ECOFIN<br>
@@ -79,14 +68,12 @@
     <strong>Profil professionnel</strong>
     <p>
       Enquêteur spécialisé en criminalité économique et financière au sein de la ZP MIDI 5341,
-      avec une expertise en investigations OSINT, FININT, GEOINT, SOCMINT et en analyses de données (Power BI).
-      Intervention dans des dossiers sensibles à forte composante financière et numérique,
-      impliquant des flux financiers, des structures sociétaires et des environnements numériques.
+      avec une expertise en investigations OSINT, FINMINT, GEOINT, SOCMINT et en analyses de données (Power BI).
+      Intervention dans des dossiers sensibles à forte composante financière et numérique.
     </p>
   </div>
 </div>
 
-<!-- ================= NL ================= -->
 <div id="nl" class="section hidden">
   <strong>Belgische politie</strong><br>
   ECOFIN-dienst<br>
@@ -101,14 +88,11 @@
     <strong>Professioneel profiel</strong>
     <p>
       Onderzoeker gespecialiseerd in economische en financiële criminaliteit binnen ZP MIDI 5341,
-      met expertise in OSINT-onderzoeken, FININT, GEOINT, SOCMINT en geavanceerde data-analyse (Power BI).
-      Actief in gevoelige dossiers met financiële stromen,
-      vennootschapsstructuren en digitale omgevingen.
+      met expertise in OSINT, FININT, GEOINT, SOCMINT en geavanceerde data-analyse (Power BI).
     </p>
   </div>
 </div>
 
-<!-- ================= EN ================= -->
 <div id="en" class="section hidden">
   <strong>Belgian Police</strong><br>
   ECOFIN Unit<br>
@@ -123,21 +107,22 @@
     <strong>Professional profile</strong>
     <p>
       Investigator specialized in economic and financial crime within ZP MIDI 5341,
-      with expertise in OSINT investigations, FININT, GEOINT, SOCMINT
-      and advanced data analysis (Power BI).
-      Involved in sensitive cases including financial flows,
-      corporate structures and digital environments.
+      with expertise in OSINT, FININT, GEOINT, SOCMINT and advanced data analysis (Power BI).
     </p>
   </div>
 </div>
 
 <script>
-function setLang(lang) {
-  document.getElementById('fr').classList.add('hidden');
-  document.getElementById('nl').classList.add('hidden');
-  document.getElementById('en').classList.add('hidden');
-  document.getElementById(lang).classList.remove('hidden');
-}
+(function(){
+  var a=['fr','nl','en'];
+  window.L=function(b){
+    for(var i=0;i<a.length;i++){
+      document.getElementById(a[i]).classList.add('hidden');
+    }
+    document.getElementById(b).classList.remove('hidden');
+  };
+  document.addEventListener('contextmenu',function(e){e.preventDefault();});
+})();
 </script>
 
 </body>
