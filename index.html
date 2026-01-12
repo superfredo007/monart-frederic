@@ -15,16 +15,37 @@
       line-height: 1.6;
       background-color: #ffffff;
       color: #000000;
+      position: relative;
+      z-index: 1;
     }
+
+    /* ===== FILIGRANE LOGO ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 420px;
+      height: 420px;
+      background: url("logo-police-midi.png") no-repeat center center;
+      background-size: contain;
+      opacity: 0.08;               /* intensité du filigrane */
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
     h1 { margin-bottom: 0; }
     .subtitle { font-weight: bold; margin-top: 4px; }
     .section { margin-top: 28px; }
     .lang { margin-top: 18px; }
+
     .lang button {
       margin-right: 6px;
       padding: 6px 10px;
       cursor: pointer;
     }
+
     .vcard {
       display: inline-block;
       margin-top: 16px;
@@ -34,6 +55,7 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     .hidden { display: none; }
   </style>
 </head>
@@ -78,38 +100,12 @@
   <strong>Belgische politie</strong><br>
   ECOFIN-dienst<br>
   OSINT • Data-analyse • Power BI
-
-  <div class="section">
-    <strong>Telefoon :</strong> 02 559 87 82 74<br>
-    <strong>E-mail :</strong> frederic.monart@police.belgium.eu
-  </div>
-
-  <div class="section">
-    <strong>Professioneel profiel</strong>
-    <p>
-      Onderzoeker gespecialiseerd in economische en financiële criminaliteit binnen ZP MIDI 5341,
-      met expertise in OSINT, FININT, GEOINT, SOCMINT en geavanceerde data-analyse (Power BI).
-    </p>
-  </div>
 </div>
 
 <div id="en" class="section hidden">
   <strong>Belgian Police</strong><br>
   ECOFIN Unit<br>
   OSINT • Data Analysis • Power BI
-
-  <div class="section">
-    <strong>Phone:</strong> +32 2 559 87 82 74<br>
-    <strong>Email:</strong> frederic.monart@police.belgium.eu
-  </div>
-
-  <div class="section">
-    <strong>Professional profile</strong>
-    <p>
-      Investigator specialized in economic and financial crime within ZP MIDI 5341,
-      with expertise in OSINT, FININT, GEOINT, SOCMINT and advanced data analysis (Power BI).
-    </p>
-  </div>
 </div>
 
 <script>
